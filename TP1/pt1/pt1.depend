@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1739482964 source:c:\users\gc\documents\utn-introduccion\tp1\pt1\main.c
+	<stdio.h>
+	<stdlib.h>
+
