@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-///libreria para sacar cubo y cuarta
+///Libreria para sacar cubo y cuarta
 #include <math.h>
 
 int main()
 {
-    ///declarar las variables
+    ///Declarar las variables
     int i, num, cubo, cuarta;
 
     /// Logica

@@ -3,7 +3,7 @@
 
 int main()
 {
-    ///declaramos variables
+    ///Declaramos variables
 
     int i;
     float suma, nota, promedio;
@@ -18,6 +18,7 @@ int main()
 
     promedio = suma / 7;
 
+    /// Imprimimos valores
     printf("El promedio del alumno es: %.2f\n", promedio);
     return 0;
 }

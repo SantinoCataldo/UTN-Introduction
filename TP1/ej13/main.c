@@ -3,7 +3,7 @@
 
 int main()
 {
-    ///declamos varaibles
+    ///Declamos varaibles
     int i, num[10], positivo[10], count = 0;
 
     ///logica

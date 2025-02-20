@@ -1,20 +1,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-///libreria para hacer numeros random
+///Libreria para hacer numeros random
 #include <time.h>
 
 int main()
 {
-    ///declaramos variables
+    ///Declaramos variables
     int i;
     float minNota = 10, suma = 0, promedio = 0;
     srand(time(NULL));
 
-    ///logica
+    ///Logica
     for(int i = 0; i < 40; i++) {
 
-    ///numeros random para no tener que ingresar manualmente
+    ///Numeros random para no tener que ingresar manualmente
     int num = rand() % 10 + 1;
     printf("Nota %d: %d\n",i + 1, num);
 
