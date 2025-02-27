@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1740656395 source:c:\users\usuario\desktop\ej11\pila.c
+	"pila.h"
+
+1740656402 c:\users\usuario\desktop\ej11\pila.h
+	<stdio.h>
+	<malloc.h>
+
+1740660274 source:c:\users\usuario\desktop\ej11\main.c
+	<stdio.h>
+	<stdlib.h>
+	"pila.h"
+
