@@ -19,12 +19,12 @@ int main() {
     }
   }
 
-  while(!pilavacia(&DADA)){
-    apilar(&AUX2, desapilar(&DADA));
+  while(!pilavacia(&dada)){
+    apilar(&aux2, desapilar(&dada));
   }
 
-  mostrar (&AUX1);
-  mostrar (&AUX2);
+  mostrar (&aux1);
+  mostrar (&aux2);
 
   return 0;
 }

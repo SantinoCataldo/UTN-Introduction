@@ -9,21 +9,14 @@ int main() {
     inicpila(&aux);
 
     printf("Ingrese elementos para la pila A (terminar con 0): \n");
-    int valor;
     do {
-        scanf("%d", &valor);
-        if (valor != 0) {
-            apilar(&pilaA, valor);
-        }
-    } while (valor != 0);
+        leer(&pilaA);
+    } while (tope(&pilaA) != 0);
 
     printf("Ingrese elementos para la pila B (terminar con 0): \n");
     do {
-        scanf("%d", &valor);
-        if (valor != 0) {
-            apilar(&pilaB, valor);
-        }
-    } while (valor != 0);
+        leer(&pilaB);
+    } while (tope(&pilaB) != 0);
 
     mostrar(&pilaA);
     mostrar(&pilaB);

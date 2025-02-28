@@ -8,14 +8,19 @@ int main() {
   inicpila(&origen);
   inicpila(&destino);
 
-  leer (&origen);
-  leer (&origen);
-  leer (&origen);
+  for(int i = 0; i < 3; i++){
+    leer (&origen);
+  }
 
   mostrar(&origen);
-  apilar (&destino, desapilar(&origen));
-  apilar (&destino, desapilar(&origen));
-  apilar (&destino, desapilar(&origen));
+
+  for(int i = 0; i < 3; i++){
+    leer (&origen);
+    if(!pilavacia(&destino)){
+        apilar(&destino, desapilar(&origen));
+    }
+  }
+
   mostrar (&destino);
   return 0;
 }
