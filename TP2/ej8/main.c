@@ -11,13 +11,10 @@ int main()
     inicpila(&jug1);
     inicpila(&jug2);
 
-    printf("Ingrese el total de cartas: ");
-    scanf("%d", &elementos);
-
-    printf("Ingrese las %d cartas del mazo: \n", elementos);
-    for(int i = 0; i < elementos ; i++){
+    printf("Ingrese elementos para origen (terminar con 0): \n");
+    do {
         leer(&mazo);
-    }
+    } while (tope(&mazo) != 0);
 
     printf("\nMAZO antes de repartir:");
     mostrar(&mazo);

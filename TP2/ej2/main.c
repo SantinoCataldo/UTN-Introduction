@@ -8,9 +8,10 @@ int main() {
   inicpila(&origen);
   inicpila(&destino);
 
-  for(int i = 0; i < 3; i++){
-    leer (&origen);
-  }
+  printf("Ingrese elementos para origen (terminar con 0): \n");
+  do {
+      leer(&origen);
+  } while (tope(&origen) != 0);
 
   mostrar(&origen);
 

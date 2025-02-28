@@ -10,10 +10,10 @@ int main()
     inicpila(&aux);
     int Valor;
 
-    printf("Ingrese los 5 elementos de DADA: \n");
-    for(int i = 0; i < 5; i++){
+    printf("Ingrese elementos para dada (terminar con 0): \n");
+    do {
         leer(&dada);
-    }
+    } while (tope(&dada) != 0);
 
     while(!pilavacia(&dada)) {
         if(tope(&dada) != 8) {

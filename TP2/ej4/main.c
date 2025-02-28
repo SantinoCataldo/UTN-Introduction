@@ -10,10 +10,10 @@ int main()
     inicpila(&destino);
     inicpila(&aux);
 
-    printf("Ingrese los 5 elementos de ORIGEN: \n");
-    for(int i = 0; i < 5; i++){
+    printf("Ingrese elementos para origen (terminar con 0): \n");
+    do {
         leer(&origen);
-    }
+    } while (tope(&origen) != 0);
 
     printf("\nValor de ORIGEN: \n");
     mostrar(&origen);
