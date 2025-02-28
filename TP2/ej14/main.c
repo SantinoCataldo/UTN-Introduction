@@ -2,45 +2,78 @@
 #include <stdlib.h>
 #include "pila.h"
 
-int main() {
-    Pila dada, par, impar, aux;
+int main()
+{
+    Pila DADA, PAR, IMPAR, AUX, TEMP;
+    int esPar = 1;
+    int elemento;
 
-    // Inicialización de las pilas
-    inicpila(&dada);
-    inicpila(&par);
-    inicpila(&impar);
-    inicpila(&aux);
+    inicpila(&DADA);
+    inicpila(&PAR);
+    inicpila(&IMPAR);
+    inicpila(&AUX);
+    inicpila(&TEMP);
 
-    // Cargar la pila DADA
-    printf("Ingrese elementos para la pila DADA (terminar con 0): \n");
+     printf("Ingrese elementos para la pila DADA (terminar con 0): \n");
     do {
-        leer(&dada);
-    } while (tope(&dada) != 0);
-    desapilar(&dada);  // Eliminar el 0 de la pila DADA
+        leer(&DADA);
+    } while (tope(&DADA) != 0);
+    desapilar(&DADA);
 
-    // Alternar los elementos entre PAR e IMPAR sin usar contador
-    int alternar = 1;  // Usamos alternar para decidir en qué pila poner el elemento
+    printf("\nPila DADA: ");
+    mostrar(&DADA);
 
-    while (!pilavacia(&dada)) {
-        int valor = desapilar(&dada);  // Desapilamos el valor de DADA
+    while(!pilavacia(&DADA))
+    {
+        elemento = desapilar(&DADA);
+        apilar(&AUX, elemento);
 
-        // Si alternar es 1, lo ponemos en la pila PAR, si es 0 lo ponemos en IMPAR
-        if (alternar) {
-            apilar(&par, valor);
-        } else {
-            apilar(&impar, valor);
+        if(!pilavacia(&DADA))
+        {
+            elemento = desapilar(&DADA);
+            apilar(&AUX, elemento);
         }
-
-        // Cambiar el valor de alternar para el siguiente elemento
-        alternar = !alternar;
+        else
+        {
+            esPar = 0;
+        }
     }
 
-    // Mostrar las pilas PAR e IMPAR
-    printf("\nElementos en la pila PAR:\n");
-    mostrar(&par);
+    while(!pilavacia(&AUX))
+    {
+        apilar(&TEMP, desapilar(&AUX));
+    }
 
-    printf("\nElementos en la pila IMPAR:\n");
-    mostrar(&impar);
+    while(!pilavacia(&TEMP))
+    {
+        apilar(&DADA, desapilar(&TEMP));
+    }
+
+    if(!pilavacia(&DADA))
+    {
+        if(esPar)
+        {
+            apilar(&PAR, desapilar(&DADA));
+            printf("\nLa cantidad de elementos en la pila DADA es PAR.\n");
+        }
+        else
+        {
+            apilar(&IMPAR, desapilar(&DADA));
+            printf("\nLa cantidad de elementos en la pila DADA es IMPAR.\n");
+        }
+    }
+    else
+    {
+        printf("\nLa pila DADA esta vacia. \n");
+    }
+
+    if(esPar == 1){
+        printf("\nPila PAR:");
+        mostrar(&PAR);
+    }else{
+        printf("\nPila IMPAR:");
+        mostrar(&IMPAR);
+    }
 
     return 0;
 }

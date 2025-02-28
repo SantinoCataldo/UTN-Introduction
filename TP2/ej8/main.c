@@ -1,20 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pila.h"
+#include <time.h>
 
 int main()
 {
     Pila mazo, jug1, jug2;
+    srand(time(NULL));
     int elementos;
 
     inicpila(&mazo);
     inicpila(&jug1);
     inicpila(&jug2);
 
-    printf("Ingrese elementos para origen (terminar con 0): \n");
-    do {
-        leer(&mazo);
-    } while (tope(&mazo) != 0);
+    for(int i = 0; i < 10; i++) {
+        int num = rand() % 10 + 1;
+        apilar(&mazo, num);
+    }
 
     printf("\nMAZO antes de repartir:");
     mostrar(&mazo);
