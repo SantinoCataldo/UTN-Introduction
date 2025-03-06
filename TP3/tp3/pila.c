@@ -1,5 +1,6 @@
 #include "pila.h"
 
+
 void inicpila(P_Pila p)
 {
        int *aux;
